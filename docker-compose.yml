@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: communication-db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=ap698jmUcdkQ
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - db_data:/var/opt/mssql
+    networks:
+      - project-network
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5s bash -c '</dev/tcp/localhost/1433'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 15s 
+  
+  project-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: project-app
+    ports:
+      - "5000:8080"  # HTTP
+      - "5001:8081"  # HTTPS
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080;
+      - ConnectionStrings__DefaultConnection=Server=database;Database=ProjectDB;User Id=sa;Password=ap698jmUcdkQ;TrustServerCertificate=true;MultipleActiveResultSets=true;
+    depends_on:
+      database:
+        condition: service_healthy
+    volumes:
+      # For HTTPS development certificates
+      - ~/.aspnet/https:/root/.aspnet/https:ro
+      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+    networks:
+      - project-network
+    restart: unless-stopped
+  
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  project-network:
+    driver: bridge

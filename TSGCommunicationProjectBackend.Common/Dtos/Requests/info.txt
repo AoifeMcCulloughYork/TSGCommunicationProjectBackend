@@ -1,0 +1,3 @@
+//Requests in the context of this project are incoming DTOs from the frontend
+//Dtos are conversely DTOs from the service layer out to frontend through the API
+//I'm not sure if that's the right nomenclature but that's just what I'm gonna go with for now
