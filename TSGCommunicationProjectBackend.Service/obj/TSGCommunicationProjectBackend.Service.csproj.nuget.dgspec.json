@@ -84,7 +84,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/yorkmacbook010/Documents/TSGCommunicationProjectBackend/TSGCommunicationProjectBackend.Common/TSGCommunicationProjectBackend.Common.csproj": {
+                "projectPath": "/Users/yorkmacbook010/Documents/TSGCommunicationProjectBackend/TSGCommunicationProjectBackend.Common/TSGCommunicationProjectBackend.Common.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

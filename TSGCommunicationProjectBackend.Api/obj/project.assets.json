@@ -1231,7 +1231,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
           "Microsoft.Extensions.Configuration": "9.0.8",
           "Microsoft.Extensions.Configuration.FileExtensions": "9.0.8",
-          "Microsoft.Extensions.Configuration.Json": "9.0.8"
+          "Microsoft.Extensions.Configuration.Json": "9.0.8",
+          "TSGCommunicationProjectBackend.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TSGCommunicationProjectBackend.Data.dll": {}

@@ -35,6 +35,7 @@ namespace TSGCommunicationProjectBackend.Api.Controllers
                     _logger.LogError("Communications not found");
                     return NotFound();
                 }
+                _logger.LogInformation("found communications {communications}", communications);
                 return Ok(communications);
             }
             catch (Exception e)

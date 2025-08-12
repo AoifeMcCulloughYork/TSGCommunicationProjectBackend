@@ -123,7 +123,7 @@ public class CommunicationRepository : ICommunicationRepository
             //will return an empty list
         }
         return await _context.CommunicationStatusHistories
-        .Where(c => c.Id == communicationId)
+        .Where(c => c.CommunicationId == communicationId)
         .OrderByDescending(c => c.OccurredUtc)
         .ToListAsync();
     }

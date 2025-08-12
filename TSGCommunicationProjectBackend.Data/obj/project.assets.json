@@ -1717,6 +1717,16 @@
             "rid": "win"
           }
         }
+      },
+      "TSGCommunicationProjectBackend.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/TSGCommunicationProjectBackend.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TSGCommunicationProjectBackend.Common.dll": {}
+        }
       }
     }
   },
@@ -4973,6 +4983,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TSGCommunicationProjectBackend.Common/1.0.0": {
+      "type": "project",
+      "path": "../TSGCommunicationProjectBackend.Common/TSGCommunicationProjectBackend.Common.csproj",
+      "msbuildProject": "../TSGCommunicationProjectBackend.Common/TSGCommunicationProjectBackend.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4982,7 +4997,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.8",
       "Microsoft.Extensions.Configuration >= 9.0.8",
       "Microsoft.Extensions.Configuration.FileExtensions >= 9.0.8",
-      "Microsoft.Extensions.Configuration.Json >= 9.0.8"
+      "Microsoft.Extensions.Configuration.Json >= 9.0.8",
+      "TSGCommunicationProjectBackend.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5009,7 +5025,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/yorkmacbook010/Documents/TSGCommunicationProjectBackend/TSGCommunicationProjectBackend.Common/TSGCommunicationProjectBackend.Common.csproj": {
+              "projectPath": "/Users/yorkmacbook010/Documents/TSGCommunicationProjectBackend/TSGCommunicationProjectBackend.Common/TSGCommunicationProjectBackend.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

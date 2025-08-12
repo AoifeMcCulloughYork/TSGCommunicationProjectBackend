@@ -19,5 +19,6 @@ public class Communication
     [Required]
     public DateTime LastUpdatedUtc { get; set; }
     public bool Active { get; set; }
+    [Required]
     public Guid MemberId { get; set; }
 }
